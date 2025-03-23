@@ -79,7 +79,7 @@ class RelationalServiceInstance {
      * @param ddbbPath 
      * @param content 
      */
-    public async createNoteIntoRelation(ddbbPath: string, newFilename: string): Promise<void> {
+    public async createNoteIntoRelation(ddbbPath: string, newFilename: string): Promise<string> {
         LOGGER.info(`--> createNoteIntoRelation. Creating note ${newFilename} into relation ${ddbbPath}`);
         const ddbbFile = resolve_tfile(ddbbPath);
         const ddbbInfo = await new DatabaseInfo(ddbbFile, DEFAULT_SETTINGS.local_settings).build();
